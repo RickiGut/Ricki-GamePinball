@@ -18,6 +18,7 @@ public class SwitchController : MonoBehaviour
     private SwitchState state;
     private Renderer renderer;
 
+
     private void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -32,6 +33,7 @@ public class SwitchController : MonoBehaviour
         {
             Toggle();
         }
+        
     }
 
     private void Set(bool active)
