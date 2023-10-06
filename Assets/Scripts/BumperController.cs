@@ -7,9 +7,12 @@ public class BumperController : MonoBehaviour
     public Collider  bola;
     public float multiplier;
     public Color color;
+    public float score;
+    
 
     public AudioManager audioManager;
     public VFXManager vfxManager;
+    public ScoreManager scoreManager;
 
     private Animator animator;
     private Renderer render;
@@ -40,6 +43,10 @@ public class BumperController : MonoBehaviour
 
             //playvfx
             vfxManager.PlayVFX(collision.transform.position);
+
+            //score add
+            scoreManager.AddScore(score);
+
         }
     }
 }

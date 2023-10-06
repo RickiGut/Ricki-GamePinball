@@ -14,6 +14,11 @@ public class SwitchController : MonoBehaviour
     public Collider bola;
     public Material offMaterial;
     public Material onMaterial;
+    public float score;
+
+    [SerializeField] AudioSource switchSFX;
+
+    public ScoreManager scoreManager;
 
     private SwitchState state;
     private Renderer renderer;
@@ -33,6 +38,8 @@ public class SwitchController : MonoBehaviour
         {
             Toggle();
         }
+
+        switchSFX.Play();
         
     }
 
@@ -62,6 +69,9 @@ public class SwitchController : MonoBehaviour
         {
             Set(true);
         }
+
+        //score add
+        scoreManager.AddScore(score);
     }
 
     private IEnumerator Blink(int times)
